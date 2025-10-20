@@ -44,9 +44,9 @@ for file in d.rglob("*.xml"):
   time=dt.datetime.now().hour
   if time < 12:
       wish="Good Morning"
-  elif 12<time<14:
+  elif 12<=time<=14:
       wish="Good Afternoon"
-  elif 14<time<24:
+  elif 14<time<=24:
       wish="Good Evening"
   else:
       wish="Hello"
@@ -59,7 +59,7 @@ for file in d.rglob("*.xml"):
   #Header
   meg["From"]="sadanandaw13@gmail.com"
   meg["To"]="romenslife@gmail.com"
-  meg["Subject"]="Sending a test PO"
+  meg["Subject"]=f"Sending a test PO of {j[0]["PO"]}"
 
   meg.set_content(f"""
   {wish},
